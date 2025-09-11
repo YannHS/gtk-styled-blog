@@ -1,0 +1,37 @@
+baseURL = 'https://example.org/'
+
+title = "Yan's Blog 📚"
+author = "Yan"
+copyright = "Copyright © 2025, Yan."
+languageCode = "en-US"
+enableRobotsTXT = true
+
+[params]
+
+  description = "A place to find Yan's info-dumps"
+
+  favicon = "images/favicon.png"
+
+  images = ["images/share.webp"]
+
+  title = "Yan's Blog"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'friendly'
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
+    
+[menu]
+  [[menu.nav]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.nav]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2

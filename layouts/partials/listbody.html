@@ -1,0 +1,26 @@
+<div class="">
+<content>
+
+  <div class="list">
+    {{ range .Pages }}
+    <div class="item" href="{{ .Permalink }}" >
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <br>
+        <small>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </small>
+
+      
+    </div>
+    {{ else }}
+    <li>
+      No posts yet
+    </li>
+    {{ end }}
+  </div>
+</content>
+</div>
+
+

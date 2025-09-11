@@ -1,0 +1,21 @@
+
+{{ $page := . }}
+
+<div class="navbar">
+{{ $menu := site.Menus.nav }}
+{{ $count := len $menu }}
+{{ $last := sub $count 1 }}
+{{ range $i, $item := $menu }}
+  {{ $posClass := "middle" }}
+  {{ if eq $i 0 }}{{ $posClass = "left" }}{{ end }}
+  {{ if eq $i $last }}{{ $posClass = "right" }}{{ end }}
+  
+  <a href="{{ $item.URL }}" class="{{ $posClass }} button
+{{ if eq $page.Page.RelPermalink $item.URL  }}
+pressed
+{{ end }}  
+  ">{{ $item.Name }}</a>
+{{ end }}
+</div>
+
+
